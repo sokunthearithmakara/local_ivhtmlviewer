@@ -1,4 +1,4 @@
-Annotation is an extension for Interactive Video activity plugin. With this extension, you can add persistent annotations including text, shape, image, hotspot, file and navigation on the video. You can manage when and where the annotation appears on your video by dragging it on your video and on the timeline editor.
+HTML Viewer (IV) is an extension for Interactive Video activity plugin. With this extension, you can upload a simulation, game, interactive content, etc. in an html format to your video.
 
 ## Installing via uploaded ZIP file ##
 
@@ -12,7 +12,7 @@ Annotation is an extension for Interactive Video activity plugin. With this exte
 
 The plugin can be also installed by putting the contents of this directory to
 
-    {your/moodle/dirroot}/local/ivannotation
+    {your/moodle/dirroot}/local/ivhtmlviewer
 
 Afterwards, log in to your Moodle site as an admin and go to _Site administration >
 Notifications_ to complete the installation.
