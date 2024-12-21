@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * English language pack for HTML Viewer
+ * English language pack for HTML Content';
  *
  * @package    local_ivhtmlviewer
  * @category   string
@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['htmlfile'] = 'HTML file';
-$string['htmlviewercontent'] = 'HTML viewer';
+$string['htmlviewercontent'] = 'HTML Content';
 $string['htmlviewerdescription'] = 'Display HTML games, simulations, or other content.';
-$string['pluginname'] = 'HTML Viewer';
-$string['privacy:metadata'] = 'The HTML Viewer plugin doesn\'t store any personal data.';
+$string['pluginname'] = 'HTML Content';
+$string['privacy:metadata'] = 'The HTML Content plugin doesn\'t store any personal data.';
