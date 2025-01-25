@@ -43,12 +43,12 @@ export default class HtmlViewer extends Base {
     postContentRender(annotation) {
         const checkIframe = () => {
             if ($(`#message[data-id='${annotation.id}'] iframe`).length > 0) {
-            // Remove the loading background because some iframe has transparent content.
-            setTimeout(() => {
-                $(`#message[data-id='${annotation.id}'] iframe`).css('background', 'none');
-            }, 1000);
+                // Remove the loading background because some iframe has transparent content.
+                setTimeout(() => {
+                    $(`#message[data-id='${annotation.id}'] iframe`).css('background', 'none');
+                }, 1000);
             } else {
-            requestAnimationFrame(checkIframe);
+                requestAnimationFrame(checkIframe);
             }
         };
         requestAnimationFrame(checkIframe);
@@ -60,7 +60,12 @@ export default class HtmlViewer extends Base {
      * @return {void}
      */
     async displayReportView(annotation) {
-        const data = await this.render(annotation, 'html');
+        const self = this;
+        // We don't need to run the render method every time the content is applied. We can cache the content.
+        if (!self.cache[annotation.id] || self.isEditMode()) {
+            self.cache[annotation.id] = await this.render(annotation, 'html');
+        }
+        const data = self.cache[annotation.id];
         let $message = $(`#message[data-id='${annotation.id}']`);
         $message.addClass('hasiframe');
         $message.find(`.modal-body`).html(data);
