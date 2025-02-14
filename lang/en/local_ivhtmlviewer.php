@@ -26,7 +26,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['htmlfile'] = 'HTML file';
-$string['htmlviewercontent'] = 'HTML Content';
+$string['htmlviewercontent'] = 'HTML content';
 $string['htmlviewerdescription'] = 'Display HTML games, simulations, or other content.';
-$string['pluginname'] = 'HTML Content';
-$string['privacy:metadata'] = 'The HTML Content plugin doesn\'t store any personal data.';
+$string['pluginname'] = 'HTML content';
+$string['privacy:metadata'] = 'The HTML content plugin doesn\'t store any personal data.';
+$string['tutorialurl'] = 'https://www.youtube.com/watch?v=YIllwoN4JDA';
