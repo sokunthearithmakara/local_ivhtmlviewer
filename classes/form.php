@@ -94,8 +94,6 @@ class form extends \mod_interactivevideo\form\base_form {
             $filemanageroptions
         );
         $mform->addRule('content', get_string('required'), 'required', null, 'client');
-
-        $mform->addRule('content', get_string('required'), 'required', null, 'client');
         $this->completion_tracking_field('none', [
             'none' => get_string('completionnone', 'mod_interactivevideo'),
             'manual' => get_string('completionmanual', 'mod_interactivevideo'),
