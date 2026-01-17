@@ -25,8 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component    = 'local_ivhtmlviewer';
-$plugin->release      = '1.1';
-$plugin->version      = 2025041100;
+$plugin->release      = '1.2';
+$plugin->version      = 2026011600;
 $plugin->requires     = 2021112800;
 $plugin->supported    = [400, 501];
 $plugin->maturity     = MATURITY_STABLE;

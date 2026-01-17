@@ -42,6 +42,7 @@ class main extends \ivplugin_richtext\main {
             'author' => 'tsmakara',
             'authorlink' => 'mailto:sokunthearithmakara@gmail.com',
             'tutorial' => get_string('tutorialurl', 'local_ivhtmlviewer'),
+            'preloadstrings' => false,
         ];
     }
 
@@ -65,7 +66,7 @@ class main extends \ivplugin_richtext\main {
                 $file->get_filename()
             )->out();
             return '<iframe id="iframe" src="' . $url .
-            '" style="width: 100%" frameborder="0" allow="autoplay" class="iv-rounded-0"></iframe>';
+                '" style="width: 100%" frameborder="0" allow="autoplay" class="iv-rounded-0"></iframe>';
         }
         return 'No content found';
     }
