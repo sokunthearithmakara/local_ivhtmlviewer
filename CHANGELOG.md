@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.1] - 2026-05-26
+
+- Hardened `db/install.php` and `db/uninstall.php` for Flexbook content type registration.
+- Added `db/upgrade.php` to register the content type in Flexbook on upgrade.
+- Updated CI workflow to match mod_flexbook (Moodle 4.05–5.02 matrix).
+- Updated Interactive Video dependency to 2026052603.
+
 ## [1.3] - 2026-05-26
 
 ### Added
