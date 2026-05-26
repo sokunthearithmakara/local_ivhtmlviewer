@@ -31,7 +31,7 @@ export default class HtmlViewer extends Base {
      * @return {void}
      */
     renderContainer(annotation) {
-        $(`#message[data-id='${annotation.id}']`).addClass('hasiframe');
+        $(`#message[data-id='${annotation.id}']`).addClass('hasiframe').toggleClass('modal-lg modal-xl');
         super.renderContainer(annotation);
     }
 

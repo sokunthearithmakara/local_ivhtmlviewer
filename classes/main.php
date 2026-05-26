@@ -43,7 +43,51 @@ class main extends \ivplugin_richtext\main {
             'authorlink' => 'mailto:sokunthearithmakara@gmail.com',
             'tutorial' => get_string('tutorialurl', 'local_ivhtmlviewer'),
             'preloadstrings' => false,
+            'flexbook' => true,
+            'fbdescription' => get_string('fbdescription', 'local_ivhtmlviewer'),
+            'fbamdmodule' => 'local_ivhtmlviewer/fbmain',
+            'fbform' => 'local_ivhtmlviewer\\fbform',
+            'dndextensions' => ['html', 'htm'],
+            'component' => 'local_ivhtmlviewer',
         ];
+    }
+
+    /**
+     * Create a new interaction instance.
+     *
+     * @param array $data The data for the new instance.
+     * @return \stdClass The newly created interaction record.
+     */
+    public function create_instance($data) {
+        global $DB, $CFG;
+        $data = (object) $data;
+        $draftitemid = $data->draftitemid;
+        unset($data->draftitemid);
+
+        // Form a default advanced settings.
+        if (empty($data->advanced)) {
+            $data->advanced = $this->flexbook_advanced();
+            $data->advanced = json_encode($data->advanced);
+            $data->completiontracking = 'none';
+            $data->xp = 0;
+        }
+
+        $data->id = $DB->insert_record('flexbook_items', $data);
+
+        // Save files from draft area.
+        if ($draftitemid) {
+            require_once($CFG->libdir . '/filelib.php');
+            \file_save_draft_area_files(
+                $draftitemid,
+                $data->contextid,
+                'mod_flexbook',
+                'content',
+                $data->id,
+                ['subdirs' => 0, 'maxfiles' => 1]
+            );
+        }
+
+        return \mod_flexbook\util::get_item($data->id, $data->contextid);
     }
 
     /**
@@ -53,8 +97,15 @@ class main extends \ivplugin_richtext\main {
      * @return string The content.
      */
     public function get_content($arg) {
+        $iframeurl = helper::normalize_iframeurl($arg['iframeurl'] ?? '');
+        if (!empty($iframeurl)) {
+            return '<iframe id="iframe" src="' . s($iframeurl) .
+                '" style="width: 100%" frameborder="0" allow="autoplay" class="iv-rounded-0"></iframe>';
+        }
+
+        $plugin = 'mod_' . (isset($arg['plugin']) ? $arg['plugin'] : 'interactivevideo');
         $fs = get_file_storage();
-        $files = $fs->get_area_files($arg["contextid"], 'mod_interactivevideo', 'content', $arg["id"], 'id DESC', false);
+        $files = $fs->get_area_files($arg["contextid"], $plugin, 'content', $arg["id"], 'id DESC', false);
         $file = reset($files);
         if ($file) {
             $url = \moodle_url::make_pluginfile_url(

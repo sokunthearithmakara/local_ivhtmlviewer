@@ -25,9 +25,15 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$string['externalurl'] = 'External URL (public)';
+$string['fbdescription'] = 'Display HTML games, simulations, or other content.';
 $string['htmlfile'] = 'HTML file';
 $string['htmlviewercontent'] = 'HTML content';
 $string['htmlviewerdescription'] = 'Display HTML games, simulations, or other content.';
+$string['invalidurl'] = 'Please enter a valid URL (starting with http:// or https://)';
 $string['pluginname'] = 'HTML content';
 $string['privacy:metadata'] = 'The HTML content plugin doesn\'t store any personal data.';
+$string['sourcefile'] = 'Local HTML file';
+$string['sourcetype'] = 'Source type';
+$string['sourceurl'] = 'External URL (public)';
 $string['tutorialurl'] = 'https://www.youtube.com/watch?v=YIllwoN4JDA';

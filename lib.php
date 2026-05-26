@@ -33,3 +33,15 @@ function local_ivhtmlviewer_ivplugin() {
         'name' => 'htmlviewer',
     ];
 }
+
+/**
+ * Provides plugin information for ivhtmlviewer.
+ *
+ * @return array Plugin information.
+ */
+function local_ivhtmlviewer_fbplugin() {
+    return [
+        'class' => 'local_ivhtmlviewer\\main',
+        'name' => 'htmlviewer',
+    ];
+}
