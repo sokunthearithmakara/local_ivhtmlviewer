@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * English language pack for HTML Viewer
+ * Khmer language pack for HTML content
  *
  * @package    local_ivhtmlviewer
  * @category   string
@@ -25,9 +25,15 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-
+$string['externalurl'] = 'URL ខាងក្រៅ (សាធារណៈ)';
+$string['fbdescription'] = 'បង្ហាញហ្គេម HTML, ការពិសោធន៍ (simulation) ឬមាតិកាអន្តរកម្មផ្សេងៗ។ ផ្ទុកឯកសារ HTML ឬភ្ជាប់ URL ខាងក្រៅ។';
 $string['htmlfile'] = 'ឯកសារ HTML';
-$string['htmlviewercontent'] = 'កម្មវិធីបង្ហាញ HTML';
-$string['htmlviewerdescription'] = 'ផ្ទុកឯកសារ HTML រួចបង្ហាញក្នុងពេលណាមួយក្នុងវីដេអូ';
-$string['pluginname'] = 'កម្មវិធីបង្ហាញ HTML';
-$string['privacy:metadata'] = 'HTML Viewer មិនផ្ទុកព័ត៌មានបុគ្គលទេ។';
+$string['htmlviewercontent'] = 'មាតិកា HTML';
+$string['htmlviewerdescription'] = 'បង្ហាញហ្គេម HTML, ការពិសោធន៍ (simulation) ឬមាតិកាអន្តរកម្មផ្សេងៗក្នុងវីដេអូ។ ផ្ទុកឯកសារ HTML ឬភ្ជាប់ URL ខាងក្រៅ។';
+$string['invalidurl'] = 'សូមបញ្ចូល URL ត្រឹមត្រូវ (ចាប់ផ្តើមដោយ http:// ឬ https://)';
+$string['pluginname'] = 'មាតិកា HTML';
+$string['privacy:metadata'] = 'កម្មវិធីជំនួយមាតិកា HTML មិនរក្សាទុកទិន្នន័យបុគ្គលទេ។';
+$string['sourcefile'] = 'ផ្ទុកឯកសារ HTML';
+$string['sourcetype'] = 'ប្រភេទប្រភព';
+$string['sourceurl'] = 'URL ខាងក្រៅ (សាធារណៈ)';
+$string['tutorialurl'] = 'https://www.youtube.com/watch?v=YIllwoN4JDA';

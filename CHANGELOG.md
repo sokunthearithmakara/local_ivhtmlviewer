@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.1+] - 2026-06-08
+
+- Complete Khmer (km) language pack.
+- Require Interactive Video 1.8.1+ (2026060800).
+
 ## [1.3.1] - 2026-05-26
 
 - Hardened `db/install.php` and `db/uninstall.php` for Flexbook content type registration.
